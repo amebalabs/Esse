@@ -5,7 +5,7 @@
 
 This repository is used for:
 * Esse for macOS releases hosting, you can download the latest version from [Releases](https://github.com/amebalabs/Esse/releases)
-* [External Scripts](/Scripts)
+* Official [External Scripts](/Scripts) repository
 * [Alfred Workflows](/Alfred)
 * Other possible integrations and tweaks
 
