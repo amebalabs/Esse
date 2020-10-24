@@ -10,6 +10,17 @@ This repository is used for:
 * [Alfred Workflows](/Alfred)
 * Other possible integrations and tweaks
 
+# Installation
+
+## Using [Homebrew](https://brew.sh)
+```
+brew tap melonamin/formulae
+brew cask install esse
+```
+### Download
+
+You can also install Esse by downloading from the [latest GitHub release](https://github.com/amebalabs/Esse/releases).
+
 # How to contribute
 
 * Create an issue with a bug report or request for a new external script.
