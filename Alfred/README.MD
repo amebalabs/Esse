@@ -48,7 +48,7 @@ Trigger | Action
 CMD+SHIFT+E | Run Esse function for a selected text and replace it with transformation result
 CTRL+CMD+SHIFT+E | Run Esse function for a selected text and put transofrmation into clipboard
 ALT+CMD+SHIFT+E | Run Esse function for a text in clipboard and put transofrmation back into clipboard
-Universal Action (*esse*) | Run Esse function for a text/URL selected in ALfred and put transofrmation back into clipboard
+Universal Action (*esse*) | Run Esse function for a text/URL selected in Alfred and put transofrmation back into clipboard
 *esse* in Alfred | Input text to transform directly into Alfred
 
 ![Esse Alfred Workflow](Esse.png)
