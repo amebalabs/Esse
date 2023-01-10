@@ -15,7 +15,7 @@ This repository is used for:
 ## Using [Homebrew](https://brew.sh)
 ```
 brew tap melonamin/formulae
-brew cask install esse
+brew install --cask esse
 ```
 ### Download
 
