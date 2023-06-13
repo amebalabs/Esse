@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "dsfappearancemanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dagronf/DSFAppearanceManager",
+      "state" : {
+        "revision" : "676cfd4e6aaa3cf6422990734c22544373db5c1a",
+        "version" : "3.3.0"
+      }
+    },
+    {
+      "identity" : "dsfquickactionbar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dagronf/DSFQuickActionBar.git",
+      "state" : {
+        "revision" : "eebbaec76cf6ab8404971f952da90ae9be29adac",
+        "version" : "6.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
