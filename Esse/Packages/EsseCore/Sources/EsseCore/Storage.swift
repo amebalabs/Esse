@@ -245,11 +245,11 @@ public extension Storage {
         let id = UUID().uuidString
         let description = customFunctionIDS.compactMap { id in
             pAllFunctions.first { $0.id == id }
-        }.compactMap(\.title).joined(separator: " ➔ ")
+        }.compactMap{$0.title}.joined(separator: " ➔ ")
 
         let functionIDs = customFunctionIDS.compactMap { id in
             pAllFunctions.first { $0.id == id }
-        }.compactMap(\.id)
+        }.compactMap{$0.id}
         let storableFunction = TextFunctionStorable(id: id, title: title, description: description, functionIDs: functionIDs)
         customFunctionsStorable.append(storableFunction)
 

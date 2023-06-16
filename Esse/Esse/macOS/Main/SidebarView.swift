@@ -14,6 +14,7 @@ struct SidebarView: View {
                     ForEach(item.children, id: \.self) { subItem in
                         Text(subItem.title)
                             .tag(subItem)
+                            .contentShape(Rectangle())
                             .gesture(TapGesture(count: 2).onEnded {
                                 if let textFunction = subItem.textFunction {
                                     selectedFunction = textFunction

@@ -126,7 +126,7 @@ public struct TextFunctionStorable: Codable {
 
 public extension [TextFunction] {
     func run(value: String) -> String {
-        let actions = compactMap(\.actions).flatMap { $0 }
+        let actions = compactMap{$0.actions}.flatMap { $0 }
         return actions.reduce(value) { $1($0) }
     }
 }
