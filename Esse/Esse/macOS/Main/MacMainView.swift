@@ -79,7 +79,11 @@ struct MacMainView: View {
                 .onChange(of: searchTerm) { _, value in
                     print("Search term: \(value)")
                 }
-                FooterView(text: $editableText, functionTrigger: $functionTrigger, isMultiEditorMode: $isMultiEditorMode)
+                FooterView(text: $editableText,
+                           transformedText: $nonEditableText,
+                           functionTrigger: $functionTrigger,
+                           isMultiEditorMode: $isMultiEditorMode,
+                           selectedFunctions: $selectedFunctions)
                     .frame(height: 15)
                 #if os(macOS)
                     QuickActionBar<TextFunction, FilterCellView>(

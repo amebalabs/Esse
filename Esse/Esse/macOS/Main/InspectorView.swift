@@ -18,6 +18,7 @@ struct InspectorView: View {
         if textFunction == nil {
             Text("Select a Function")
                 .font(.title2)
+                .foregroundStyle(.secondary)
         } else {
             Form {
                 Section(content: {
