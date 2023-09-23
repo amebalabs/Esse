@@ -24,5 +24,5 @@ struct FilterCellView: View {
 
 #Preview {
     FilterCellView(textFunction: Storage.sharedInstance.pAllFunctions.randomElement()!)
-        .frame(width: 300)
+        .frame(width: 300).padding()
 }

@@ -47,6 +47,11 @@ public extension String {
 
         return words
     }
+    
+    func lines() -> [String] {
+        guard !self.isEmpty else {return []}
+        return self.components(separatedBy: .newlines)
+    }
 
     func inserting(separator: String, every n: Int) -> String {
         var result = ""

@@ -1,5 +1,7 @@
 #if os(macOS)
-    import DSFQuickActionBar
+import DSFQuickActionBar
+import STTextViewUI
+import STTextView
 #endif
 import EsseCore
 import SwiftUI
@@ -15,6 +17,7 @@ struct SidebarItem: Identifiable, Hashable {
 struct MacMainView: View {
     @State private var editableText: String = ""
     @State private var nonEditableText: String = ""
+    @State private var selection: NSRange?
 
     @State var searchTerm = ""
     @State var visible = false
@@ -27,19 +30,17 @@ struct MacMainView: View {
     @State var highlightedFunction: TextFunction? = nil
     @State var selectedFunction: TextFunction?
     @State var selectedFunctions: [TextFunction] = []
+    @State var functionTrigger: Bool = false
 
     var body: some View {
         NavigationView {
             SidebarView(sidebarItems: sidebarItems, selectedFunction: $selectedFunction, highlightedFunction: $highlightedFunction)
                 .searchable(text: $searchTerm, placement: .sidebar)
-                .listStyle(SidebarListStyle())
 
             VStack {
                 GeometryReader { geometry in
                     if !isMultiEditorMode {
                         TextEditor(text: $editableText)
-                            .scrollIndicators(ScrollIndicatorVisibility.never)
-                            .padding(2)
                             .font(.body)
                     } else {
                         HStack {
@@ -66,21 +67,20 @@ struct MacMainView: View {
                         selectedFunctions.append(value)
                     } else {
                         editableText = value?.run(editableText) ?? ""
+                        self.fireFunctionTrigger()
                     }
                 }
                 .onChange(of: selectedFunctions) { _, value in
                     if isMultiEditorMode {
                         self.nonEditableText = value.run(value: self.editableText)
+                        self.fireFunctionTrigger()
                     }
                 }
                 .onChange(of: searchTerm) { _, value in
                     print("Search term: \(value)")
                 }
-
-                if isMultiEditorMode {
-                    FooterView(footerItems: $selectedFunctions)
-                }
-
+                FooterView(text: $editableText, functionTrigger: $functionTrigger, isMultiEditorMode: $isMultiEditorMode)
+                    .frame(height: 15)
                 #if os(macOS)
                     QuickActionBar<TextFunction, FilterCellView>(
                         location: .window,
@@ -139,11 +139,19 @@ struct MacMainView: View {
             NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
         #endif
     }
+    
+    private func fireFunctionTrigger() {
+        self.functionTrigger = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.functionTrigger = false
+        }
+    }
 
     #if os(macOS)
         private func quickOpenFilter(_ task: DSFQuickActionBar.SearchTask) {
             var results: [TextFunction] = []
-            if $searchTerm.wrappedValue.count > 0 {
+            let searchTerm = task.searchTerm
+            if searchTerm.count > 0 {
                 results = Storage.sharedInstance.pAllFunctions.filter { $0.searchableText.score(word: searchTerm) > 0.4 }.sorted { $0.searchableText.score(word: searchTerm) > $1.searchableText.score(word: searchTerm) }
             } else {
                 results = Storage.sharedInstance.pAllFunctions
@@ -151,6 +159,8 @@ struct MacMainView: View {
             results = results.filter { !selectedFunctions.contains($0) }
             task.complete(with: results)
         }
+    
+    
     #endif
 }
 

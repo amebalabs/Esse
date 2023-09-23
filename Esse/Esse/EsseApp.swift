@@ -1,17 +1,16 @@
-//
-//  EsseApp.swift
-//  Esse
-//
-//  Created by Alexander Mazanov on 6/9/23.
-//
-
 import SwiftUI
 
 @main
 struct EsseApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
+        #if os(iOS)
+            Text("Hi")
+        #else
             MacMainView()
+        #endif
         }.commands {
             SidebarCommands()
         }

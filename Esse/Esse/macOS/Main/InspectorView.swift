@@ -26,6 +26,7 @@ struct InspectorView: View {
                             .bold()
                         Text("")
                         Text(textFunction!.desc)
+                        Spacer()
                     }
                 }, header: {
                     Text(textFunction!.title)
