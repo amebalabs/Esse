@@ -20,6 +20,13 @@ struct LibraryCommands: Commands {
                 openWindow(id: "library")
             }).keyboardShortcut("L", modifiers: [.command, .shift])
             
+            Button("Open Scripts Folder", action: {
+                let fileManager = FileManager.default
+                if let iCloudURL = fileManager.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") {
+                    NSWorkspace.shared.open(iCloudURL)
+                }
+            })
+            
             Button("Get More Scripts", action: {
                 NSWorkspace.shared.open(URL(string: "https://github.com/amebalabs/Esse/tree/master/Scripts")!)
             })
@@ -73,7 +80,7 @@ struct CustomFileCommands: Commands {
     }
     
     func openWindowIfNeeded() {
-        guard NSApp.windows.isEmpty else {return}
+        guard !NSApp.windows.contains(where: {$0.identifier?.rawValue.starts(with: "main") ?? false}) else {return}
         openWindow(id: "main")
     }
     

@@ -7,6 +7,7 @@ import EsseCore
 import SwiftUI
 
 struct MacMainView: View {
+    @Environment(\.openWindow) private var openWindow
     @AppStorage("userText") private var editableText: String = ""
     @State private var nonEditableText: String = ""
 
@@ -32,15 +33,11 @@ struct MacMainView: View {
                             .onChange(of: editableText) { _, value in
                                 self.nonEditableText = selectedFunctions.run(value: value)
                             }
-//                            .scrollIndicators(ScrollIndicatorVisibility.never)
-//                            .padding(2)
                             .font(.body)
 
                         TextEditor(text: $nonEditableText)
                             .multilineTextAlignment(.leading)
                             .frame(width: geometry.size.width / 2)
-//                            .scrollIndicators(ScrollIndicatorVisibility.never)
-//                            .padding(2)
                             .font(.body)
                     }
                 }
@@ -104,6 +101,13 @@ struct MacMainView: View {
                     Image(systemName: "command")
                 }
             }
+            ToolbarItem {
+                Button(action: {
+                    openWindow(id: "library")
+                }) {
+                    Image(systemName: "book")
+                }
+            }
         }
     }
     
@@ -116,13 +120,8 @@ struct MacMainView: View {
 
     #if os(macOS)
         private func quickOpenFilter(_ task: DSFQuickActionBar.SearchTask) {
-            var results: [TextFunction] = []
             let searchTerm = task.searchTerm
-            if searchTerm.count > 0 {
-                results = Storage.sharedInstance.pAllFunctions.filter { $0.searchableText.score(word: searchTerm) > 0.4 }.sorted { $0.searchableText.score(word: searchTerm) > $1.searchableText.score(word: searchTerm) }
-            } else {
-                results = Storage.sharedInstance.pAllFunctions
-            }
+            var results: [TextFunction] = Storage.sharedInstance.filterFunctions(searchTerm: searchTerm)
             results = results.filter { !selectedFunctions.contains($0) }
             task.complete(with: results)
         }

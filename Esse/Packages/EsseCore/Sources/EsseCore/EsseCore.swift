@@ -32,7 +32,7 @@ public struct TextFunction {
     public var externalFileURL: URL?
     public var functionIDs: [Int] = []
     public var searchableText: String {
-        title + desc
+        (title + desc).lowercased()
     }
 
     init(id: String, title: String, description: String, category: FunctionCategory = .Other, action: @escaping TextFunctionAction) {

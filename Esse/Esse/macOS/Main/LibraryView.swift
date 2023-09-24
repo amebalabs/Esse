@@ -11,15 +11,15 @@ struct SidebarItem: Identifiable, Hashable {
 
 struct LibraryView: View {
     @State var searchTerm = ""
-    @State var highlightedFunction: TextFunction? = nil
     @State var selectedFunction: TextFunction?
     
     let sidebarItems: [SidebarItem] = Storage.sharedInstance.sidebarItems
     
     var body: some View {
         NavigationView {
-            SidebarView(sidebarItems: sidebarItems, selectedFunction: $selectedFunction, highlightedFunction: $highlightedFunction)
+            SidebarView(sidebarItems: sidebarItems, selectedFunction: $selectedFunction, searchTerm: $searchTerm)
                 .searchable(text: $searchTerm, placement: .sidebar)
+                .frame(minWidth: 320)
             InspectorView(textFunction: $selectedFunction)
                 .padding()
         }
