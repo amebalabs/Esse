@@ -1,18 +1,23 @@
 import SwiftUI
 
+
 @main
 struct EsseApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
-        WindowGroup {
-        #if os(iOS)
-            Text("Hi")
-        #else
+        WindowGroup("Esse", id:"main") {
             MacMainView()
-        #endif
-        }.commands {
-            SidebarCommands()
+                .frame(minWidth: 600, minHeight: 400)
+        }
+        .commands {
+            CommandGroup(replacing: .newItem, addition: { })
+            CustomFileCommands()
+            CustomViewCommands()
+            LibraryCommands()
+        }
+        Window("Library", id:"library") {
+            LibraryView()
         }
     }
 }

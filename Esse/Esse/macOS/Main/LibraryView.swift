@@ -37,19 +37,6 @@ struct LibraryView: View {
     }
 }
 
-func openLibraryView() {
-    let libraryView = LibraryView()
-    let hostingController = NSHostingController(rootView: libraryView)
-    let newWindow = NSWindow(
-        contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
-        styleMask: [.titled, .closable, .resizable],
-        backing: .buffered,
-        defer: false
-    )
-    newWindow.contentView = hostingController.view
-    newWindow.makeKeyAndOrderFront(nil)
-}
-
 #Preview {
     LibraryView()
 }

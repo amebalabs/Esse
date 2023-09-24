@@ -7,13 +7,13 @@ import EsseCore
 import SwiftUI
 
 struct MacMainView: View {
-    @State private var editableText: String = ""
+    @AppStorage("userText") private var editableText: String = ""
     @State private var nonEditableText: String = ""
 
     @State var searchTerm = ""
     @State var quickSearchIsVisible = false
 
-    @State var isMultiEditorMode: Bool = false
+    @AppStorage("dualPaneModeEnabled") var isMultiEditorMode: Bool = false
 
     @State var selectedFunction: TextFunction?
     @State var selectedFunctions: [TextFunction] = []
@@ -26,21 +26,21 @@ struct MacMainView: View {
                     TextEditor(text: $editableText)
                         .font(.body)
                 } else {
-                    HStack {
+                    HStack(spacing:0) {
                         TextEditor(text: $editableText)
                             .frame(width: geometry.size.width / 2)
                             .onChange(of: editableText) { _, value in
                                 self.nonEditableText = selectedFunctions.run(value: value)
                             }
-                            .scrollIndicators(ScrollIndicatorVisibility.never)
-                            .padding(2)
+//                            .scrollIndicators(ScrollIndicatorVisibility.never)
+//                            .padding(2)
                             .font(.body)
 
                         TextEditor(text: $nonEditableText)
                             .multilineTextAlignment(.leading)
                             .frame(width: geometry.size.width / 2)
-                            .scrollIndicators(ScrollIndicatorVisibility.never)
-                            .padding(2)
+//                            .scrollIndicators(ScrollIndicatorVisibility.never)
+//                            .padding(2)
                             .font(.body)
                     }
                 }
@@ -59,6 +59,15 @@ struct MacMainView: View {
                     self.fireFunctionTrigger()
                 }
             }
+            .onReceive(NotificationCenter.default.publisher(for: .runFunctions), perform: { _ in
+                self.nonEditableText = selectedFunctions.run(value: self.editableText)
+                self.fireFunctionTrigger()
+            })
+            .onReceive(NotificationCenter.default.publisher(for: .showCommandPallete), perform: { _ in
+                guard !quickSearchIsVisible else {return}
+                quickSearchIsVisible = true
+            })
+            
             FooterView(text: $editableText,
                        transformedText: $nonEditableText,
                        functionTrigger: $functionTrigger,
@@ -94,7 +103,6 @@ struct MacMainView: View {
                 }) {
                     Image(systemName: "command")
                 }
-                .keyboardShortcut("o", modifiers: [.command, .shift])
             }
         }
     }
