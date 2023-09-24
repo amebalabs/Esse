@@ -19,5 +19,8 @@ struct EsseApp: App {
         Window("Library", id:"library") {
             LibraryView()
         }
+        Settings {
+            SettingsView()
+        }
     }
 }

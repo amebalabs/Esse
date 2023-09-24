@@ -24,8 +24,9 @@
 		FAA09A912ABF601A00601BDC /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = FAA09A902ABF601A00601BDC /* STTextView */; };
 		FAA09A932ABFAC9F00601BDC /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09A922ABFAC9F00601BDC /* LibraryView.swift */; };
 		FAA09A972AC08CD700601BDC /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09A962AC08CD700601BDC /* Notifications.swift */; };
+		FAB46A422AC0E4BD00DC6369 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */; };
+		FAB46A442AC0E4ED00DC6369 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB46A432AC0E4ED00DC6369 /* Settings.swift */; };
 		FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD22E122A34B8290001F65C /* InspectorView.swift */; };
-		FAFE30672A35247F00539695 /* SelectedFunctionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE30662A35247F00539695 /* SelectedFunctionsView.swift */; };
 		FAFF320F2A33B1D800B4F8AC /* FilterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +47,8 @@
 		FAA09A8C2ABF3A0700601BDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FAA09A922ABFAC9F00601BDC /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FAA09A962AC08CD700601BDC /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		FAB46A432AC0E4ED00DC6369 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FAD22E122A34B8290001F65C /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
-		FAFE30662A35247F00539695 /* SelectedFunctionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFunctionsView.swift; sourceTree = "<group>"; };
 		FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +60,7 @@
 				FA853DE22A33AEBE007D6889 /* DSFQuickActionBar in Frameworks */,
 				FAA09A912ABF601A00601BDC /* STTextView in Frameworks */,
 				FA73C8632A34AEF6004ABF10 /* EsseCore in Frameworks */,
+				FAB46A422AC0E4BD00DC6369 /* LaunchAtLogin in Frameworks */,
 				FAA09A8F2ABF601A00601BDC /* STTextKitPlus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +139,7 @@
 				FA2748412A352D4D00B6189C /* Helpers.swift */,
 				FAA09A962AC08CD700601BDC /* Notifications.swift */,
 				FA580F452AAFBB0000FF53EE /* MenuCommands.swift */,
+				FAB46A432AC0E4ED00DC6369 /* Settings.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -147,7 +150,6 @@
 				FA853DDE2A33ADBB007D6889 /* MacMainView.swift */,
 				FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */,
 				FAD22E122A34B8290001F65C /* InspectorView.swift */,
-				FAFE30662A35247F00539695 /* SelectedFunctionsView.swift */,
 				FAA09A882ABF2FD700601BDC /* FooterView.swift */,
 				FA27483F2A352CFC00B6189C /* SidebarView.swift */,
 				FAA09A922ABFAC9F00601BDC /* LibraryView.swift */,
@@ -176,6 +178,7 @@
 				FA73C8622A34AEF6004ABF10 /* EsseCore */,
 				FAA09A8E2ABF601A00601BDC /* STTextKitPlus */,
 				FAA09A902ABF601A00601BDC /* STTextView */,
+				FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */,
 			);
 			productName = Esse;
 			productReference = FA853DCB2A33AD71007D6889 /* Esse.app */;
@@ -208,6 +211,7 @@
 			packageReferences = (
 				FA853DE02A33AEBE007D6889 /* XCRemoteSwiftPackageReference "DSFQuickActionBar" */,
 				FAA09A8D2ABF601A00601BDC /* XCRemoteSwiftPackageReference "STTextView" */,
+				FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = FA853DCC2A33AD71007D6889 /* Products */;
 			projectDirPath = "";
@@ -238,9 +242,9 @@
 			files = (
 				FAFF320F2A33B1D800B4F8AC /* FilterCellView.swift in Sources */,
 				FAA09A972AC08CD700601BDC /* Notifications.swift in Sources */,
+				FAB46A442AC0E4ED00DC6369 /* Settings.swift in Sources */,
 				FA2748402A352CFC00B6189C /* SidebarView.swift in Sources */,
 				FA853DCF2A33AD71007D6889 /* EsseApp.swift in Sources */,
-				FAFE30672A35247F00539695 /* SelectedFunctionsView.swift in Sources */,
 				FAA09A932ABFAC9F00601BDC /* LibraryView.swift in Sources */,
 				FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */,
 				FAA09A892ABF2FD700601BDC /* FooterView.swift in Sources */,
@@ -489,6 +493,14 @@
 				minimumVersion = 0.8.14;
 			};
 		};
+		FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +522,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAA09A8D2ABF601A00601BDC /* XCRemoteSwiftPackageReference "STTextView" */;
 			productName = STTextView;
+		};
+		FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

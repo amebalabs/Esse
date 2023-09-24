@@ -17,6 +17,24 @@
         "revision" : "eebbaec76cf6ab8404971f952da90ae9be29adac",
         "version" : "6.0.1"
       }
+    },
+    {
+      "identity" : "launchatlogin-modern",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/LaunchAtLogin-Modern",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9c41991631605c8ccfe0347bbcb5c659169f2ec5"
+      }
+    },
+    {
+      "identity" : "sttextview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/STTextView",
+      "state" : {
+        "revision" : "2f26c8a53db4014555bcf5e4bfa1896b285c4dcc",
+        "version" : "0.8.14"
+      }
     }
   ],
   "version" : 2
