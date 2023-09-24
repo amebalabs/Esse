@@ -6,19 +6,24 @@ struct FilterCellView: View {
 
     var body: some View {
         HStack {
-            Image(systemName: "bolt")
-                .font(.title)
+//            Image(systemName: "bolt")
+//                .font(.title)
             VStack(alignment: .leading) {
                 HStack {
-                    Text(textFunction.title).font(.title3)
+                    Text(textFunction.title)
+                        .font(.title2)
+                        .fontWeight(.medium)
                     Spacer()
                 }
                 HStack {
-                    Text(textFunction.desc).font(.callout).foregroundColor(.gray).italic()
+                    Text(textFunction.desc)
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                        .italic()
                     Spacer()
                 }
             }
-        }
+        }.environment(\.colorScheme, .dark)
     }
 }
 

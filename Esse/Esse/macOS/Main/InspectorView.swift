@@ -22,18 +22,18 @@ struct InspectorView: View {
         } else {
             Form {
                 Section(content: {
-                    VStack(alignment: .leading) {
-                        Text("Category: \(textFunction!.category.rawValue)")
-                            .bold()
+                    VStack(alignment: .leading) {    
                         Text("")
                         Text(textFunction!.desc)
-                        Spacer()
                     }
                 }, header: {
                     Text(textFunction!.title)
-                        .font(.title2)
+                        .font(.title)
                         .multilineTextAlignment(.leading)
                 })
+                
+                Divider()
+                
                 Section(content: {
                     TextEditor(text: $inputText)
                         .scrollIndicators(.never)
@@ -43,7 +43,7 @@ struct InspectorView: View {
                         }
                 }, header: {
                     Text("Input")
-                        .font(.headline)
+                        .font(.title2)
                         .multilineTextAlignment(.leading)
                 })
                 Section(content: {
@@ -52,9 +52,10 @@ struct InspectorView: View {
                         .frame(height: 200)
                 }, header: {
                     Text("Output")
-                        .font(.headline)
+                        .font(.title2)
                         .multilineTextAlignment(.leading)
                 })
+                Spacer()
             }
             .formStyle(.automatic)
             .onAppear {

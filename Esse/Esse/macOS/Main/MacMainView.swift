@@ -71,21 +71,19 @@ struct MacMainView: View {
                        isMultiEditorMode: $isMultiEditorMode,
                        selectedFunctions: $selectedFunctions)
                 .frame(height: 15)
-            #if os(macOS)
-                QuickActionBar<TextFunction, FilterCellView>(
-                    location: .window,
-                    visible: $quickSearchIsVisible,
-                    showKeyboardShortcuts: true,
-                    requiredClickCount: .single,
-                    searchTerm: $searchTerm,
-                    selectedItem: $selectedFunction,
-                    placeholderText: "Quick Search",
-                    itemsForSearchTerm: self.quickOpenFilter,
-                    viewForItem: { textFunction, _ in
-                        FilterCellView(textFunction: textFunction)
-                    }
-                )
-            #endif
+            QuickActionBar<TextFunction, FilterCellView>(
+                location: .window,
+                visible: $quickSearchIsVisible,
+                showKeyboardShortcuts: true,
+                requiredClickCount: .single,
+                searchTerm: $searchTerm,
+                selectedItem: $selectedFunction,
+                placeholderText: "Quick Search",
+                itemsForSearchTerm: self.quickOpenFilter,
+                viewForItem: { textFunction, _ in
+                    FilterCellView(textFunction: textFunction)
+                }
+            )
         }
         .toolbar {
             ToolbarItem {
@@ -121,7 +119,7 @@ struct MacMainView: View {
     #if os(macOS)
         private func quickOpenFilter(_ task: DSFQuickActionBar.SearchTask) {
             let searchTerm = task.searchTerm
-            var results: [TextFunction] = Storage.sharedInstance.filterFunctions(searchTerm: searchTerm)
+            var results: [TextFunction] = searchTerm.isEmpty ? Storage.sharedInstance.pAllFunctions : Storage.sharedInstance.filterFunctions(searchTerm: searchTerm)
             results = results.filter { !selectedFunctions.contains($0) }
             task.complete(with: results)
         }
