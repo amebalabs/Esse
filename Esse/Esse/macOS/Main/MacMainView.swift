@@ -1,7 +1,5 @@
 #if os(macOS)
 import DSFQuickActionBar
-import STTextViewUI
-import STTextView
 #endif
 import EsseCore
 import SwiftUI
@@ -43,12 +41,14 @@ struct MacMainView: View {
                 }
             }
             .onChange(of: selectedFunction) { _, value in
-                if isMultiEditorMode, let value {
+                guard let value else {return}
+                if isMultiEditorMode {
                     selectedFunctions.append(value)
                 } else {
-                    editableText = value?.run(editableText) ?? ""
+                    editableText = value.run(editableText)
                     self.fireFunctionTrigger()
                 }
+                selectedFunction = nil
             }
             .onChange(of: selectedFunctions) { _, value in
                 if isMultiEditorMode {

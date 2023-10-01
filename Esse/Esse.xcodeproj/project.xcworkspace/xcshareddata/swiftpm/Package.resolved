@@ -28,12 +28,12 @@
       }
     },
     {
-      "identity" : "sttextview",
+      "identity" : "swift-argument-parser",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/krzyzanowskim/STTextView",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
       "state" : {
-        "revision" : "2f26c8a53db4014555bcf5e4bfa1896b285c4dcc",
-        "version" : "0.8.14"
+        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
+        "version" : "1.2.3"
       }
     }
   ],
