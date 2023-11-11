@@ -525,7 +525,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -568,7 +568,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
