@@ -27,6 +27,12 @@
 		FAB46A4C2AC9DF7C00DC6369 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB46A4B2AC9DF7C00DC6369 /* main.swift */; };
 		FAB46A552AC9E05000DC6369 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = FAB46A542AC9E05000DC6369 /* ArgumentParser */; };
 		FAB46A572AC9E15600DC6369 /* EsseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAB46A562AC9E15600DC6369 /* EsseCore */; };
+		FAD08B6E2B43430100AE4294 /* STCompletion in Frameworks */ = {isa = PBXBuildFile; productRef = FAD08B6D2B43430100AE4294 /* STCompletion */; };
+		FAD08B702B43430100AE4294 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = FAD08B6F2B43430100AE4294 /* STTextView */; };
+		FAD08B722B434AF400AE4294 /* EsseDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B712B434AF400AE4294 /* EsseDocument.swift */; };
+		FAD08B752B435D8D00AE4294 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B742B435D8D00AE4294 /* GeneralSettingsView.swift */; };
+		FAD08B782B435E1100AE4294 /* EnumPickerVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B772B435E1100AE4294 /* EnumPickerVIew.swift */; };
+		FAD08B7A2B43626D00AE4294 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B792B43626D00AE4294 /* Appearance.swift */; };
 		FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD22E122A34B8290001F65C /* InspectorView.swift */; };
 		FAFF320F2A33B1D800B4F8AC /* FilterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +90,10 @@
 		FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EsseCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB46A4B2AC9DF7C00DC6369 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FAB46A502AC9DFD300DC6369 /* EsseCommandLine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EsseCommandLine.entitlements; sourceTree = "<group>"; };
+		FAD08B712B434AF400AE4294 /* EsseDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsseDocument.swift; sourceTree = "<group>"; };
+		FAD08B742B435D8D00AE4294 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		FAD08B772B435E1100AE4294 /* EnumPickerVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPickerVIew.swift; sourceTree = "<group>"; };
+		FAD08B792B43626D00AE4294 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		FAD22E122A34B8290001F65C /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +104,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA853DE22A33AEBE007D6889 /* DSFQuickActionBar in Frameworks */,
+				FAD08B6E2B43430100AE4294 /* STCompletion in Frameworks */,
+				FAD08B702B43430100AE4294 /* STTextView in Frameworks */,
 				FA73C8632A34AEF6004ABF10 /* EsseCore in Frameworks */,
 				FAB46A422AC0E4BD00DC6369 /* LaunchAtLogin in Frameworks */,
 			);
@@ -181,10 +193,11 @@
 			isa = PBXGroup;
 			children = (
 				FAFE30652A35246800539695 /* Main */,
-				FA2748412A352D4D00B6189C /* Helpers.swift */,
+				FAD08B732B435D7A00AE4294 /* Settings */,
+				FAD08B762B435DF200AE4294 /* Helpers */,
 				FAA09A962AC08CD700601BDC /* Notifications.swift */,
 				FA580F452AAFBB0000FF53EE /* MenuCommands.swift */,
-				FAB46A432AC0E4ED00DC6369 /* Settings.swift */,
+				FAD08B712B434AF400AE4294 /* EsseDocument.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -196,6 +209,25 @@
 				FAB46A4B2AC9DF7C00DC6369 /* main.swift */,
 			);
 			path = EsseCommandLine;
+			sourceTree = "<group>";
+		};
+		FAD08B732B435D7A00AE4294 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FAB46A432AC0E4ED00DC6369 /* Settings.swift */,
+				FAD08B742B435D8D00AE4294 /* GeneralSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FAD08B762B435DF200AE4294 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA2748412A352D4D00B6189C /* Helpers.swift */,
+				FAD08B772B435E1100AE4294 /* EnumPickerVIew.swift */,
+				FAD08B792B43626D00AE4294 /* Appearance.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		FAFE30652A35246800539695 /* Main */ = {
@@ -234,6 +266,8 @@
 				FA853DE12A33AEBE007D6889 /* DSFQuickActionBar */,
 				FA73C8622A34AEF6004ABF10 /* EsseCore */,
 				FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */,
+				FAD08B6D2B43430100AE4294 /* STCompletion */,
+				FAD08B6F2B43430100AE4294 /* STTextView */,
 			);
 			productName = Esse;
 			productReference = FA853DCB2A33AD71007D6889 /* Esse.app */;
@@ -291,6 +325,7 @@
 				FA853DE02A33AEBE007D6889 /* XCRemoteSwiftPackageReference "DSFQuickActionBar" */,
 				FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 				FAB46A532AC9E05000DC6369 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				FAD08B6C2B43430100AE4294 /* XCRemoteSwiftPackageReference "STTextView" */,
 			);
 			productRefGroup = FA853DCC2A33AD71007D6889 /* Products */;
 			projectDirPath = "";
@@ -346,12 +381,16 @@
 				FAB46A442AC0E4ED00DC6369 /* Settings.swift in Sources */,
 				FA2748402A352CFC00B6189C /* SidebarView.swift in Sources */,
 				FA853DCF2A33AD71007D6889 /* EsseApp.swift in Sources */,
+				FAD08B7A2B43626D00AE4294 /* Appearance.swift in Sources */,
 				FAA09A932ABFAC9F00601BDC /* LibraryView.swift in Sources */,
 				FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */,
 				FAA09A892ABF2FD700601BDC /* FooterView.swift in Sources */,
 				FA853DDF2A33ADBB007D6889 /* MacMainView.swift in Sources */,
 				FAA09A8B2ABF393E00601BDC /* AppDelegate.swift in Sources */,
+				FAD08B722B434AF400AE4294 /* EsseDocument.swift in Sources */,
+				FAD08B752B435D8D00AE4294 /* GeneralSettingsView.swift in Sources */,
 				FA2748422A352D4D00B6189C /* Helpers.swift in Sources */,
+				FAD08B782B435E1100AE4294 /* EnumPickerVIew.swift in Sources */,
 				FA580F462AAFBB0000FF53EE /* MenuCommands.swift in Sources */,
 				FA2748462A374CFA00B6189C /* Intent.swift in Sources */,
 			);
@@ -669,6 +708,14 @@
 				minimumVersion = 1.2.3;
 			};
 		};
+		FAD08B6C2B43430100AE4294 /* XCRemoteSwiftPackageReference "STTextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/STTextView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.22;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -694,6 +741,16 @@
 		FAB46A562AC9E15600DC6369 /* EsseCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EsseCore;
+		};
+		FAD08B6D2B43430100AE4294 /* STCompletion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD08B6C2B43430100AE4294 /* XCRemoteSwiftPackageReference "STTextView" */;
+			productName = STCompletion;
+		};
+		FAD08B6F2B43430100AE4294 /* STTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD08B6C2B43430100AE4294 /* XCRemoteSwiftPackageReference "STTextView" */;
+			productName = STTextView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
