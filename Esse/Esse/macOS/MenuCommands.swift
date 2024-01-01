@@ -39,6 +39,18 @@ struct CustomViewCommands: Commands {
     
     var body: some Commands {
         CommandGroup(after: CommandGroupPlacement.toolbar) {
+            Button(action: {
+                if let currentWindow = NSApp.keyWindow,
+                   let windowController = currentWindow.windowController {
+                    windowController.newWindowForTab(nil)
+                    if let newWindow = NSApp.keyWindow, currentWindow != newWindow {
+                        currentWindow.addTabbedWindow(newWindow, ordered: .above)
+                    }
+                }
+            }, label: {
+                Text("New Tab")
+            })
+            .keyboardShortcut("t", modifiers: [.command])
             Button("Standard Mode", action: {
                 isMultiEditorMode = false
             })

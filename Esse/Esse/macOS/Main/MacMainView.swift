@@ -5,8 +5,9 @@ import EsseCore
 import SwiftUI
 
 struct MacMainView: View {
+    @Binding var document: EsseDocument
     @Environment(\.openWindow) private var openWindow
-    @AppStorage("userText") private var editableText: String = ""
+    
     @State private var nonEditableText: String = ""
 
     @State var searchTerm = ""
@@ -22,13 +23,13 @@ struct MacMainView: View {
         VStack {
             GeometryReader { geometry in
                 if !isMultiEditorMode {
-                    TextEditor(text: $editableText)
+                    TextEditor(text: $document.text)
                         .font(.body)
                 } else {
                     HStack(spacing:0) {
-                        TextEditor(text: $editableText)
+                        TextEditor(text: $document.text)
                             .frame(width: geometry.size.width / 2)
-                            .onChange(of: editableText) { _, value in
+                            .onChange(of: document.text) { _, value in
                                 self.nonEditableText = selectedFunctions.run(value: value)
                             }
                             .font(.body)
@@ -45,19 +46,19 @@ struct MacMainView: View {
                 if isMultiEditorMode {
                     selectedFunctions.append(value)
                 } else {
-                    editableText = value.run(editableText)
+                    document.text = value.run(document.text)
                     self.fireFunctionTrigger()
                 }
                 selectedFunction = nil
             }
             .onChange(of: selectedFunctions) { _, value in
                 if isMultiEditorMode {
-                    self.nonEditableText = value.run(value: self.editableText)
+                    self.nonEditableText = value.run(value: document.text)
                     self.fireFunctionTrigger()
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: .runFunctions), perform: { _ in
-                self.nonEditableText = selectedFunctions.run(value: self.editableText)
+                self.nonEditableText = selectedFunctions.run(value: document.text)
                 self.fireFunctionTrigger()
             })
             .onReceive(NotificationCenter.default.publisher(for: .showCommandPallete), perform: { _ in
@@ -65,7 +66,7 @@ struct MacMainView: View {
                 quickSearchIsVisible = true
             })
             
-            FooterView(text: $editableText,
+            FooterView(text: $document.text,
                        transformedText: $nonEditableText,
                        functionTrigger: $functionTrigger,
                        isMultiEditorMode: $isMultiEditorMode,
@@ -127,12 +128,12 @@ struct MacMainView: View {
     #endif
 }
 
-#Preview {
-    MacMainView()
-        .frame(width: 700, height: 500)
-}
-
-#Preview {
-    MacMainView(isMultiEditorMode: true)
-        .frame(width: 700, height: 500)
-}
+//#Preview {
+//    MacMainView()
+//        .frame(width: 700, height: 500)
+//}
+//
+//#Preview {
+//    MacMainView(isMultiEditorMode: true)
+//        .frame(width: 700, height: 500)
+//}
