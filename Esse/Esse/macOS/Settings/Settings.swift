@@ -1,6 +1,4 @@
 import SwiftUI
-import LaunchAtLogin
-
 
 struct SettingsView: View {
     private enum Tabs: Hashable {
@@ -21,17 +19,6 @@ struct SettingsView: View {
         }
         .padding(20)
         .frame(width: 375, height: 150)
-    }
-}
-
-struct GeneralSettingsView: View {
-    
-    var body: some View {
-        Form {
-            LaunchAtLogin.Toggle()
-        }
-        .padding(20)
-        .frame(width: 350, height: 100)
     }
 }
 
