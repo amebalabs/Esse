@@ -88,7 +88,7 @@ struct SelectedFunctionsView: View {
     var body: some View {
         VStack {
             if functions.isEmpty {
-                Text("No Fucntions Selected")
+                Text("No Functions Selected")
                     .font(.title2)
                     .foregroundStyle(.secondary)
             } else {
