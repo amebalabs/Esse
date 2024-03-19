@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA2748402A352CFC00B6189C /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27483F2A352CFC00B6189C /* SidebarView.swift */; };
+		FA2748422A352D4D00B6189C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2748412A352D4D00B6189C /* Helpers.swift */; };
+		FA2748462A374CFA00B6189C /* Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2748452A374CFA00B6189C /* Intent.swift */; };
+		FA3D77142AC9F36900E56CE8 /* EsseCommandLine in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		FA580F462AAFBB0000FF53EE /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA580F452AAFBB0000FF53EE /* MenuCommands.swift */; };
+		FA73C8632A34AEF6004ABF10 /* EsseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA73C8622A34AEF6004ABF10 /* EsseCore */; };
+		FA853DCF2A33AD71007D6889 /* EsseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA853DCE2A33AD71007D6889 /* EsseApp.swift */; };
+		FA853DD32A33AD72007D6889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA853DD22A33AD72007D6889 /* Assets.xcassets */; };
+		FA853DD72A33AD72007D6889 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA853DD62A33AD72007D6889 /* Preview Assets.xcassets */; };
+		FA853DDF2A33ADBB007D6889 /* MacMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA853DDE2A33ADBB007D6889 /* MacMainView.swift */; };
+		FA853DE22A33AEBE007D6889 /* DSFQuickActionBar in Frameworks */ = {isa = PBXBuildFile; platformFilters = (macos, ); productRef = FA853DE12A33AEBE007D6889 /* DSFQuickActionBar */; };
+		FAA09A892ABF2FD700601BDC /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09A882ABF2FD700601BDC /* FooterView.swift */; };
+		FAA09A8B2ABF393E00601BDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09A8A2ABF393E00601BDC /* AppDelegate.swift */; };
+		FAA09A932ABFAC9F00601BDC /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09A922ABFAC9F00601BDC /* LibraryView.swift */; };
+		FAA09A972AC08CD700601BDC /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09A962AC08CD700601BDC /* Notifications.swift */; };
+		FAB46A422AC0E4BD00DC6369 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */; };
+		FAB46A442AC0E4ED00DC6369 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB46A432AC0E4ED00DC6369 /* Settings.swift */; };
+		FAB46A4C2AC9DF7C00DC6369 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB46A4B2AC9DF7C00DC6369 /* main.swift */; };
+		FAB46A552AC9E05000DC6369 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = FAB46A542AC9E05000DC6369 /* ArgumentParser */; };
+		FAB46A572AC9E15600DC6369 /* EsseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAB46A562AC9E15600DC6369 /* EsseCore */; };
+		FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD22E122A34B8290001F65C /* InspectorView.swift */; };
+		FAFF320F2A33B1D800B4F8AC /* FilterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA3D77152AC9F37000E56CE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA853DC32A33AD71007D6889 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAB46A482AC9DF7C00DC6369;
+			remoteInfo = EsseCommandLine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAB46A472AC9DF7C00DC6369 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		FAB46A5A2AC9E1D900DC6369 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				FA3D77142AC9F36900E56CE8 /* EsseCommandLine in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FA27483F2A352CFC00B6189C /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		FA2748412A352D4D00B6189C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		FA2748452A374CFA00B6189C /* Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intent.swift; sourceTree = "<group>"; };
+		FA580F452AAFBB0000FF53EE /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
+		FA73C85F2A33DBB4004ABF10 /* EsseCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EsseCore; sourceTree = "<group>"; };
+		FA853DCB2A33AD71007D6889 /* Esse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA853DCE2A33AD71007D6889 /* EsseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsseApp.swift; sourceTree = "<group>"; };
+		FA853DD22A33AD72007D6889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA853DD42A33AD72007D6889 /* Esse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Esse.entitlements; sourceTree = "<group>"; };
+		FA853DD62A33AD72007D6889 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA853DDE2A33ADBB007D6889 /* MacMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMainView.swift; sourceTree = "<group>"; };
+		FAA09A882ABF2FD700601BDC /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		FAA09A8A2ABF393E00601BDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAA09A8C2ABF3A0700601BDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FAA09A922ABFAC9F00601BDC /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		FAA09A962AC08CD700601BDC /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		FAB46A432AC0E4ED00DC6369 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EsseCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB46A4B2AC9DF7C00DC6369 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FAB46A502AC9DFD300DC6369 /* EsseCommandLine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EsseCommandLine.entitlements; sourceTree = "<group>"; };
+		FAD22E122A34B8290001F65C /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
+		FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCellView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA853DC82A33AD71007D6889 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA853DE22A33AEBE007D6889 /* DSFQuickActionBar in Frameworks */,
+				FA73C8632A34AEF6004ABF10 /* EsseCore in Frameworks */,
+				FAB46A422AC0E4BD00DC6369 /* LaunchAtLogin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB46A462AC9DF7C00DC6369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB46A552AC9E05000DC6369 /* ArgumentParser in Frameworks */,
+				FAB46A572AC9E15600DC6369 /* EsseCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA2748442A374CE900B6189C /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				FA2748452A374CFA00B6189C /* Intent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		FA73C85E2A33DBB4004ABF10 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FA73C85F2A33DBB4004ABF10 /* EsseCore */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		FA73C8612A34AEF6004ABF10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA853DC22A33AD71007D6889 = {
+			isa = PBXGroup;
+			children = (
+				FA73C85E2A33DBB4004ABF10 /* Packages */,
+				FA853DCD2A33AD71007D6889 /* Esse */,
+				FAB46A4A2AC9DF7C00DC6369 /* EsseCommandLine */,
+				FA853DCC2A33AD71007D6889 /* Products */,
+				FA73C8612A34AEF6004ABF10 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA853DCC2A33AD71007D6889 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA853DCB2A33AD71007D6889 /* Esse.app */,
+				FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA853DCD2A33AD71007D6889 /* Esse */ = {
+			isa = PBXGroup;
+			children = (
+				FAA09A8C2ABF3A0700601BDC /* Info.plist */,
+				FA2748442A374CE900B6189C /* Intents */,
+				FA853DDD2A33AD98007D6889 /* macOS */,
+				FA853DCE2A33AD71007D6889 /* EsseApp.swift */,
+				FAA09A8A2ABF393E00601BDC /* AppDelegate.swift */,
+				FA853DD22A33AD72007D6889 /* Assets.xcassets */,
+				FA853DD42A33AD72007D6889 /* Esse.entitlements */,
+				FA853DD52A33AD72007D6889 /* Preview Content */,
+			);
+			path = Esse;
+			sourceTree = "<group>";
+		};
+		FA853DD52A33AD72007D6889 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA853DD62A33AD72007D6889 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA853DDD2A33AD98007D6889 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE30652A35246800539695 /* Main */,
+				FA2748412A352D4D00B6189C /* Helpers.swift */,
+				FAA09A962AC08CD700601BDC /* Notifications.swift */,
+				FA580F452AAFBB0000FF53EE /* MenuCommands.swift */,
+				FAB46A432AC0E4ED00DC6369 /* Settings.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		FAB46A4A2AC9DF7C00DC6369 /* EsseCommandLine */ = {
+			isa = PBXGroup;
+			children = (
+				FAB46A502AC9DFD300DC6369 /* EsseCommandLine.entitlements */,
+				FAB46A4B2AC9DF7C00DC6369 /* main.swift */,
+			);
+			path = EsseCommandLine;
+			sourceTree = "<group>";
+		};
+		FAFE30652A35246800539695 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA853DDE2A33ADBB007D6889 /* MacMainView.swift */,
+				FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */,
+				FAD22E122A34B8290001F65C /* InspectorView.swift */,
+				FAA09A882ABF2FD700601BDC /* FooterView.swift */,
+				FA27483F2A352CFC00B6189C /* SidebarView.swift */,
+				FAA09A922ABFAC9F00601BDC /* LibraryView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA853DCA2A33AD71007D6889 /* Esse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA853DDA2A33AD72007D6889 /* Build configuration list for PBXNativeTarget "Esse" */;
+			buildPhases = (
+				FA853DC72A33AD71007D6889 /* Sources */,
+				FA853DC82A33AD71007D6889 /* Frameworks */,
+				FA853DC92A33AD71007D6889 /* Resources */,
+				FAB46A5A2AC9E1D900DC6369 /* CopyFiles */,
+				FAB46A5C2AC9E4EF00DC6369 /* Build Version from Git */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA3D77162AC9F37000E56CE8 /* PBXTargetDependency */,
+			);
+			name = Esse;
+			packageProductDependencies = (
+				FA853DE12A33AEBE007D6889 /* DSFQuickActionBar */,
+				FA73C8622A34AEF6004ABF10 /* EsseCore */,
+				FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */,
+			);
+			productName = Esse;
+			productReference = FA853DCB2A33AD71007D6889 /* Esse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAB46A482AC9DF7C00DC6369 /* EsseCommandLine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB46A4D2AC9DF7C00DC6369 /* Build configuration list for PBXNativeTarget "EsseCommandLine" */;
+			buildPhases = (
+				FAB46A452AC9DF7C00DC6369 /* Sources */,
+				FAB46A462AC9DF7C00DC6369 /* Frameworks */,
+				FAB46A472AC9DF7C00DC6369 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EsseCommandLine;
+			packageProductDependencies = (
+				FAB46A542AC9E05000DC6369 /* ArgumentParser */,
+				FAB46A562AC9E15600DC6369 /* EsseCore */,
+			);
+			productName = EsseCommandLine;
+			productReference = FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA853DC32A33AD71007D6889 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FA853DCA2A33AD71007D6889 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FAB46A482AC9DF7C00DC6369 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = FA853DC62A33AD71007D6889 /* Build configuration list for PBXProject "Esse" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA853DC22A33AD71007D6889;
+			packageReferences = (
+				FA853DE02A33AEBE007D6889 /* XCRemoteSwiftPackageReference "DSFQuickActionBar" */,
+				FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				FAB46A532AC9E05000DC6369 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
+			productRefGroup = FA853DCC2A33AD71007D6889 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA853DCA2A33AD71007D6889 /* Esse */,
+				FAB46A482AC9DF7C00DC6369 /* EsseCommandLine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA853DC92A33AD71007D6889 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA853DD72A33AD72007D6889 /* Preview Assets.xcassets in Resources */,
+				FA853DD32A33AD72007D6889 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FAB46A5C2AC9E4EF00DC6369 /* Build Version from Git */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Version from Git";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(git rev-list --count HEAD)\n#/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$PRODUCT_SETTINGS_PATH\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA853DC72A33AD71007D6889 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFF320F2A33B1D800B4F8AC /* FilterCellView.swift in Sources */,
+				FAA09A972AC08CD700601BDC /* Notifications.swift in Sources */,
+				FAB46A442AC0E4ED00DC6369 /* Settings.swift in Sources */,
+				FA2748402A352CFC00B6189C /* SidebarView.swift in Sources */,
+				FA853DCF2A33AD71007D6889 /* EsseApp.swift in Sources */,
+				FAA09A932ABFAC9F00601BDC /* LibraryView.swift in Sources */,
+				FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */,
+				FAA09A892ABF2FD700601BDC /* FooterView.swift in Sources */,
+				FA853DDF2A33ADBB007D6889 /* MacMainView.swift in Sources */,
+				FAA09A8B2ABF393E00601BDC /* AppDelegate.swift in Sources */,
+				FA2748422A352D4D00B6189C /* Helpers.swift in Sources */,
+				FA580F462AAFBB0000FF53EE /* MenuCommands.swift in Sources */,
+				FA2748462A374CFA00B6189C /* Intent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB46A452AC9DF7C00DC6369 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB46A4C2AC9DF7C00DC6369 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA3D77162AC9F37000E56CE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAB46A482AC9DF7C00DC6369 /* EsseCommandLine */;
+			targetProxy = FA3D77152AC9F37000E56CE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA853DD82A33AD72007D6889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA853DD92A33AD72007D6889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FA853DDB2A33AD72007D6889 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Esse/Esse.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 226;
+				DEVELOPMENT_ASSET_PATHS = "\"Esse/Preview Content\"";
+				DEVELOPMENT_TEAM = X93LWC49WV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Esse/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Esse;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2023.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FA853DDC2A33AD72007D6889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Esse/Esse.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 226;
+				DEVELOPMENT_ASSET_PATHS = "\"Esse/Preview Content\"";
+				DEVELOPMENT_TEAM = X93LWC49WV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Esse/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Esse;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2023.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FAB46A4E2AC9DF7C00DC6369 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EsseCommandLine/EsseCommandLine.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X93LWC49WV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse.cli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FAB46A4F2AC9DF7C00DC6369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EsseCommandLine/EsseCommandLine.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X93LWC49WV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse.cli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA853DC62A33AD71007D6889 /* Build configuration list for PBXProject "Esse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA853DD82A33AD72007D6889 /* Debug */,
+				FA853DD92A33AD72007D6889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA853DDA2A33AD72007D6889 /* Build configuration list for PBXNativeTarget "Esse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA853DDB2A33AD72007D6889 /* Debug */,
+				FA853DDC2A33AD72007D6889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAB46A4D2AC9DF7C00DC6369 /* Build configuration list for PBXNativeTarget "EsseCommandLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB46A4E2AC9DF7C00DC6369 /* Debug */,
+				FAB46A4F2AC9DF7C00DC6369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA853DE02A33AEBE007D6889 /* XCRemoteSwiftPackageReference "DSFQuickActionBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dagronf/DSFQuickActionBar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.1;
+			};
+		};
+		FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		FAB46A532AC9E05000DC6369 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA73C8622A34AEF6004ABF10 /* EsseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EsseCore;
+		};
+		FA853DE12A33AEBE007D6889 /* DSFQuickActionBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA853DE02A33AEBE007D6889 /* XCRemoteSwiftPackageReference "DSFQuickActionBar" */;
+			productName = DSFQuickActionBar;
+		};
+		FAB46A412AC0E4BD00DC6369 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAB46A402AC0E4BD00DC6369 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
+		FAB46A542AC9E05000DC6369 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAB46A532AC9E05000DC6369 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		FAB46A562AC9E15600DC6369 /* EsseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EsseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FA853DC32A33AD71007D6889 /* Project object */;
+}
