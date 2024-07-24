@@ -33,6 +33,7 @@
 		FAD08B752B435D8D00AE4294 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B742B435D8D00AE4294 /* GeneralSettingsView.swift */; };
 		FAD08B782B435E1100AE4294 /* EnumPickerVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B772B435E1100AE4294 /* EnumPickerVIew.swift */; };
 		FAD08B7A2B43626D00AE4294 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B792B43626D00AE4294 /* Appearance.swift */; };
+		FAD08B7E2B43890B00AE4294 /* AboutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD08B7D2B43890B00AE4294 /* AboutSettingsView.swift */; };
 		FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD22E122A34B8290001F65C /* InspectorView.swift */; };
 		FAFF320F2A33B1D800B4F8AC /* FilterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		FAD08B742B435D8D00AE4294 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		FAD08B772B435E1100AE4294 /* EnumPickerVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumPickerVIew.swift; sourceTree = "<group>"; };
 		FAD08B792B43626D00AE4294 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		FAD08B7D2B43890B00AE4294 /* AboutSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSettingsView.swift; sourceTree = "<group>"; };
 		FAD22E122A34B8290001F65C /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		FAFF320E2A33B1D800B4F8AC /* FilterCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +218,7 @@
 			children = (
 				FAB46A432AC0E4ED00DC6369 /* Settings.swift */,
 				FAD08B742B435D8D00AE4294 /* GeneralSettingsView.swift */,
+				FAD08B7D2B43890B00AE4294 /* AboutSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				FAA09A932ABFAC9F00601BDC /* LibraryView.swift in Sources */,
 				FAD22E132A34B8290001F65C /* InspectorView.swift in Sources */,
 				FAA09A892ABF2FD700601BDC /* FooterView.swift in Sources */,
+				FAD08B7E2B43890B00AE4294 /* AboutSettingsView.swift in Sources */,
 				FA853DDF2A33ADBB007D6889 /* MacMainView.swift in Sources */,
 				FAA09A8B2ABF393E00601BDC /* AppDelegate.swift in Sources */,
 				FAD08B722B434AF400AE4294 /* EsseDocument.swift in Sources */,
@@ -475,6 +479,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -530,6 +535,7 @@
 				MTL_FAST_MATH = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};

@@ -17,12 +17,13 @@ struct AboutSettingsView: View {
                     }
                     Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))")
                         .font(.subheadline)
-                    Text("Copyright ©2020-2024 Ameba Labs. All rights reserved.")
+                        .foregroundStyle(.secondary)
+                    Text("© 2020-\(Calendar.current.component(.year, from: Date()).description) Ameba Labs. All rights reserved.")
                         .font(.footnote)
+                        .foregroundStyle(.secondary)
                         .padding(.top, 10)
                 }
             }
-            Spacer()
             Divider()
             HStack {
                 Spacer()
