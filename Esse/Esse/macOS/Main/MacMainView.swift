@@ -1,12 +1,13 @@
-#if os(macOS)
 import DSFQuickActionBar
-#endif
+import AppKit
 import EsseCore
 import SwiftUI
 
 struct MacMainView: View {
     @Binding var document: EsseDocument
     @Environment(\.openWindow) private var openWindow
+    
+    @Environment(\.appearsActive) private var appearsActive
     
     @State private var nonEditableText: String = ""
 
@@ -58,11 +59,12 @@ struct MacMainView: View {
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: .runFunctions), perform: { _ in
+                guard appearsActive else {return}
                 self.nonEditableText = selectedFunctions.run(value: document.text)
                 self.fireFunctionTrigger()
             })
             .onReceive(NotificationCenter.default.publisher(for: .showCommandPallete), perform: { _ in
-                guard !quickSearchIsVisible else {return}
+                guard !quickSearchIsVisible, appearsActive else {return}
                 quickSearchIsVisible = true
             })
             
@@ -117,15 +119,13 @@ struct MacMainView: View {
         }
     }
 
-    #if os(macOS)
-        private func quickOpenFilter(_ task: DSFQuickActionBar.SearchTask) {
-            let searchTerm = task.searchTerm
-            var results: [TextFunction] = searchTerm.isEmpty ? Storage.sharedInstance.pAllFunctions : Storage.sharedInstance.filterFunctions(searchTerm: searchTerm)
-            results = results.filter { !selectedFunctions.contains($0) }
-            task.complete(with: results)
-        }
+    private func quickOpenFilter(_ task: DSFQuickActionBar.SearchTask) {
+        let searchTerm = task.searchTerm
+        var results: [TextFunction] = searchTerm.isEmpty ? Storage.sharedInstance.pAllFunctions : Storage.sharedInstance.filterFunctions(searchTerm: searchTerm)
+        results = results.filter { !selectedFunctions.contains($0) }
+        task.complete(with: results)
+    }
     
-    #endif
 }
 
 //#Preview {
