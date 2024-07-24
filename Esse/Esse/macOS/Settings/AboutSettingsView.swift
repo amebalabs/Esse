@@ -8,7 +8,7 @@ struct AboutSettingsView: View {
                     .resizable()
                     .renderingMode(.original)
                     .frame(width: 90, height: 90, alignment: .leading)
-                
+
                 VStack(alignment: .leading) {
                     if #available(macOS 11.0, *) {
                         Text("Esse")

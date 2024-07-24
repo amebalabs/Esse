@@ -22,7 +22,7 @@ struct InspectorView: View {
         } else {
             Form {
                 Section(content: {
-                    VStack(alignment: .leading) {    
+                    VStack(alignment: .leading) {
                         Text("")
                         Text(textFunction!.desc)
                     }
@@ -31,15 +31,15 @@ struct InspectorView: View {
                         .font(.title)
                         .multilineTextAlignment(.leading)
                 })
-                
+
                 Divider()
-                
+
                 Section(content: {
                     TextEditor(text: $inputText)
                         .scrollIndicators(.never)
                         .frame(height: 200)
                         .onChange(of: inputText) { value, _ in
-                            self.outputText = textFunction!.run(value)
+                            outputText = textFunction!.run(value)
                         }
                 }, header: {
                     Text("Input")

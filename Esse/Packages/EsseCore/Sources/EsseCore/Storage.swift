@@ -147,7 +147,7 @@ public class Storage {
             }
         }
 
-        customFunctionsStorable.forEach { f in
+        for f in customFunctionsStorable {
             let functions = f.functionIDs.compactMap { id in
                 pAllFunctions.first { $0.id == id }?.actions
             }.flatMap { $0 }
@@ -245,11 +245,11 @@ public extension Storage {
         let id = UUID().uuidString
         let description = customFunctionIDS.compactMap { id in
             pAllFunctions.first { $0.id == id }
-        }.compactMap{$0.title}.joined(separator: " ➔ ")
+        }.compactMap(\.title).joined(separator: " ➔ ")
 
         let functionIDs = customFunctionIDS.compactMap { id in
             pAllFunctions.first { $0.id == id }
-        }.compactMap{$0.id}
+        }.compactMap(\.id)
         let storableFunction = TextFunctionStorable(id: id, title: title, description: description, functionIDs: functionIDs)
         customFunctionsStorable.append(storableFunction)
 

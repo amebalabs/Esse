@@ -3,9 +3,9 @@ import SwiftUI
 public struct EnumPickerView<T: Hashable & CaseIterable, V: View>: View {
     @Binding public var selected: T
     public var title: String?
-    
+
     public let mapping: (T) -> V
-    
+
     public var body: some View {
         Picker(selection: $selected, label: Text(title ?? "")) {
             ForEach(Array(T.allCases), id: \.self) {

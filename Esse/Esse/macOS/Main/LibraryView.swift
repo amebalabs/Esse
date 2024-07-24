@@ -1,5 +1,5 @@
-import SwiftUI
 import EsseCore
+import SwiftUI
 
 struct SidebarItem: Identifiable, Hashable {
     var id: String = UUID().uuidString
@@ -12,9 +12,9 @@ struct SidebarItem: Identifiable, Hashable {
 struct LibraryView: View {
     @State var searchTerm = ""
     @State var selectedFunction: TextFunction?
-    
+
     let sidebarItems: [SidebarItem] = Storage.sharedInstance.sidebarItems
-    
+
     var body: some View {
         NavigationView {
             SidebarView(sidebarItems: sidebarItems, selectedFunction: $selectedFunction, searchTerm: $searchTerm)
@@ -32,6 +32,7 @@ struct LibraryView: View {
         }
         .navigationTitle("Esse Library")
     }
+
     private func toggleSidebar() {
         NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
     }

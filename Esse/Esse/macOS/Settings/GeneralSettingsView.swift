@@ -1,5 +1,5 @@
-import SwiftUI
 import LaunchAtLogin
+import SwiftUI
 
 struct GeneralSettingsView: View {
     @AppStorage("appearance") private var appearance: AppearanceOptions = .System

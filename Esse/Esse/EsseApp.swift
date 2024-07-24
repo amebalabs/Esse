@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 @main
 struct EsseApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -15,7 +14,7 @@ struct EsseApp: App {
             CustomViewCommands()
             LibraryCommands()
         }
-        Window("Library", id:"library") {
+        Window("Library", id: "library") {
             LibraryView()
         }
         Settings {
@@ -29,18 +28,18 @@ class DocumentController: ObservableObject {
         let document = EsseDocument()
         let documentURL = getAppSupportDirectory().appendingPathComponent("Esse.txt")
         do {
-            let data = document.text.data(using: .utf8)!
-            try data.write(to: documentURL)
-            NSDocumentController.shared.openDocument(withContentsOf: documentURL, display: true) { (_, _, _) in }
+//            let data = document.text.data(using: .utf8)!
+//            try data.write(to: documentURL)
+            NSDocumentController.shared.openDocument(withContentsOf: documentURL, display: true) { _, _, _ in }
         } catch {
             print("Failed to create default document: \(error)")
         }
     }
-    
+
     private func getAppSupportDirectory() -> URL {
         let paths = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
         let appSupportDirectory = paths[0].appendingPathComponent(Bundle.main.bundleIdentifier!)
-        
+
         if !FileManager.default.fileExists(atPath: appSupportDirectory.path) {
             do {
                 try FileManager.default.createDirectory(at: appSupportDirectory, withIntermediateDirectories: true, attributes: nil)
@@ -48,7 +47,7 @@ class DocumentController: ObservableObject {
                 print("Failed to create Application Support directory: \(error)")
             }
         }
-        
+
         return appSupportDirectory
     }
 }

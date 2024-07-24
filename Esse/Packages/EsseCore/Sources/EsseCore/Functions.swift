@@ -3,7 +3,7 @@ import Foundation
 
 // MARK: Case Functions
 
-struct CaseFunctions {
+enum CaseFunctions {
     static let all: [TextFunction] = [
         lowerCase,
         upperCase,
@@ -862,7 +862,7 @@ enum OtherFunctions {
         guard words.count > 0 else { return "" }
 
         var counts: [String: Int] = [:]
-        words.forEach { word in
+        for word in words {
             counts[word] = (counts[word] ?? 0) + 1
         }
         var output: [String] = counts.sorted { $0.value > $1.value }.map { "\($0.key):\($0.value)" }

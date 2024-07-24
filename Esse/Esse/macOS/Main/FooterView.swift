@@ -1,43 +1,48 @@
-import SwiftUI
 import EsseCore
+import SwiftUI
 
 struct FooterView: View {
-    @Binding var text: String
-    @Binding var transformedText:String
+    @Binding var text: AttributedString
+    @Binding var transformedText: String
     @Binding var functionTrigger: Bool
     @Binding var isMultiEditorMode: Bool
     @Binding var selectedFunctions: [TextFunction]
     @State var floatingEnabled: Bool = false
     @State var isHovering: Bool = false
     @State var activeTootltip: String = ""
-    
+
     @State var showSheet: Bool = false
-    
+
     var isMainWindowFloating: Bool {
         NSApp.mainWindow?.level == .floating
     }
-    var statsText: String {
-        "\(text.lines().count) lines • \(text.words().count) words • \(text.count) characters"
+
+    var textString: String {
+        String(text.characters)
     }
-    
+
+    var statsText: String {
+        "\(textString.lines().count) lines • \(textString.words().count) words • \(textString.count) characters"
+    }
+
     var body: some View {
         HStack {
-            Text(isHovering ? activeTootltip:statsText)
+            Text(isHovering ? activeTootltip : statsText)
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .padding(.leading)
-            
+
             Spacer()
-            
+
             if isMultiEditorMode {
                 Button(action: {
-                    self.showSheet = true
+                    showSheet = true
                 }) {
                     Image(systemName: "function")
                         .font(.system(size: 19))
                 }
                 .buttonStyle(.plain)
-                .opacity(functionTrigger ? 1:0.5)
+                .opacity(functionTrigger ? 1 : 0.5)
                 .foregroundColor(functionTrigger ? .blue : .primary)
                 .animation(.bouncy, value: functionTrigger)
                 .onHover { hovering in
@@ -45,16 +50,16 @@ struct FooterView: View {
                     isHovering = hovering
                 }
                 .popover(isPresented: $showSheet, content: {
-                    SelectedFunctionsView(functions: $selectedFunctions, isPresented: self.$showSheet)
+                    SelectedFunctionsView(functions: $selectedFunctions, isPresented: $showSheet)
                 })
                 Divider()
             }
-            
+
             Button(action: {
                 NSApp.mainWindow?.level = (isMainWindowFloating ? .normal : .floating)
                 floatingEnabled.toggle()
             }) {
-                Image(systemName: (floatingEnabled ? "pin.circle.fill":"pin.circle"))
+                Image(systemName: floatingEnabled ? "pin.circle.fill" : "pin.circle")
                     .font(.system(size: 19))
             }
             .buttonStyle(.plain)
@@ -63,9 +68,8 @@ struct FooterView: View {
                 activeTootltip = floatingEnabled ? "Behave like a Normal Window" : "Float on Top of All Other Windows"
                 isHovering = hovering
             }
-            
 
-            ShareLink(item: isMultiEditorMode ? transformedText:text)  {
+            ShareLink(item: isMultiEditorMode ? transformedText : textString) {
                 Image(systemName: "arrow.up.circle.fill")
                     .font(.system(size: 19))
             }
@@ -80,11 +84,10 @@ struct FooterView: View {
     }
 }
 
-
 struct SelectedFunctionsView: View {
     @Binding var functions: [TextFunction]
     @Binding var isPresented: Bool
-    
+
     var body: some View {
         VStack {
             if functions.isEmpty {
@@ -99,7 +102,7 @@ struct SelectedFunctionsView: View {
                             Text(item.title)
                             Spacer()
                             Button(action: {
-                               delete(at: index)
+                                delete(at: index)
                             }) {
                                 Image(systemName: "x.circle")
                                     .foregroundColor(.red)
@@ -116,7 +119,7 @@ struct SelectedFunctionsView: View {
                     Button(action: {
                         functions.removeAll()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                            self.isPresented = false
+                            isPresented = false
                         }
                     }) {
                         Label(
@@ -132,11 +135,11 @@ struct SelectedFunctionsView: View {
         .padding(.bottom)
         .frame(width: 300, height: 300)
     }
-    
+
     private func move(from source: IndexSet, to destination: Int) {
         functions.move(fromOffsets: source, toOffset: destination)
     }
-    
+
     private func delete(at index: Int) {
         functions.remove(at: index)
     }
@@ -144,7 +147,7 @@ struct SelectedFunctionsView: View {
 
 struct ReorderableList: View {
     @State private var items = ["Item 1", "Item 2", "Item 3", "Item 4"]
-    
+
     var body: some View {
         List {
             ForEach(items, id: \.self) { item in
@@ -157,18 +160,17 @@ struct ReorderableList: View {
             .onMove(perform: move)
         }
     }
-    
+
     private func move(from source: IndexSet, to destination: Int) {
         items.move(fromOffsets: source, toOffset: destination)
     }
-    
+
     private func delete(item: String) {
         if let index = items.firstIndex(of: item) {
             items.remove(at: index)
         }
     }
 }
-
 
 #Preview {
     FooterView(text: .constant("Hello, World! \n Oh, Yeah!"), transformedText: .constant("Hello, World! \n Oh, Yeah!"), functionTrigger: .constant(true), isMultiEditorMode: .constant(true), selectedFunctions: .constant([Storage.sharedInstance.pAllFunctions.randomElement()!]))

@@ -1,14 +1,16 @@
-import DSFQuickActionBar
 import AppKit
+import DSFQuickActionBar
 import EsseCore
+import NeonPlugin
+import STTextViewUI
 import SwiftUI
 
 struct MacMainView: View {
     @Binding var document: EsseDocument
     @Environment(\.openWindow) private var openWindow
-    
+
     @Environment(\.appearsActive) private var appearsActive
-    
+
     @State private var nonEditableText: String = ""
 
     @State var searchTerm = ""
@@ -19,21 +21,32 @@ struct MacMainView: View {
     @State var selectedFunction: TextFunction?
     @State var selectedFunctions: [TextFunction] = []
     @State var functionTrigger: Bool = false
+    @State private var selection: NSRange?
 
     var body: some View {
         VStack {
             GeometryReader { geometry in
                 if !isMultiEditorMode {
-                    TextEditor(text: $document.text)
-                        .font(.body)
+                    STTextViewUI.TextView(
+                        text: $document.text,
+                        selection: $selection,
+                        options: [.wrapLines, .highlightSelectedLine],
+                        plugins: [NeonPlugin(theme: .default, language: .python)]
+                    )
+                    .textViewFont(.preferredFont(forTextStyle: .body))
                 } else {
-                    HStack(spacing:0) {
-                        TextEditor(text: $document.text)
-                            .frame(width: geometry.size.width / 2)
-                            .onChange(of: document.text) { _, value in
-                                self.nonEditableText = selectedFunctions.run(value: value)
-                            }
-                            .font(.body)
+                    HStack(spacing: 0) {
+                        STTextViewUI.TextView(
+                            text: $document.text,
+                            selection: $selection,
+                            options: [.wrapLines, .highlightSelectedLine],
+                            plugins: [NeonPlugin(theme: .default, language: .python)]
+                        )
+                        .textViewFont(.preferredFont(forTextStyle: .body))
+                        .frame(width: geometry.size.width / 2)
+                        .onChange(of: document.text) { _, value in
+                            nonEditableText = selectedFunctions.run(value: String(value.characters))
+                        }
 
                         TextEditor(text: $nonEditableText)
                             .multilineTextAlignment(.leading)
@@ -43,31 +56,31 @@ struct MacMainView: View {
                 }
             }
             .onChange(of: selectedFunction) { _, value in
-                guard let value else {return}
+                guard let value else { return }
                 if isMultiEditorMode {
                     selectedFunctions.append(value)
                 } else {
-                    document.text = value.run(document.text)
-                    self.fireFunctionTrigger()
+                    document.text = AttributedString(value.run(String(document.text.characters)))
+                    fireFunctionTrigger()
                 }
                 selectedFunction = nil
             }
             .onChange(of: selectedFunctions) { _, value in
                 if isMultiEditorMode {
-                    self.nonEditableText = value.run(value: document.text)
-                    self.fireFunctionTrigger()
+                    nonEditableText = value.run(value: String(document.text.characters))
+                    fireFunctionTrigger()
                 }
             }
             .onReceive(NotificationCenter.default.publisher(for: .runFunctions), perform: { _ in
-                guard appearsActive else {return}
-                self.nonEditableText = selectedFunctions.run(value: document.text)
-                self.fireFunctionTrigger()
+                guard appearsActive else { return }
+                nonEditableText = selectedFunctions.run(value: String(document.text.characters))
+                fireFunctionTrigger()
             })
             .onReceive(NotificationCenter.default.publisher(for: .showCommandPallete), perform: { _ in
-                guard !quickSearchIsVisible, appearsActive else {return}
+                guard !quickSearchIsVisible, appearsActive else { return }
                 quickSearchIsVisible = true
             })
-            
+
             FooterView(text: $document.text,
                        transformedText: $nonEditableText,
                        functionTrigger: $functionTrigger,
@@ -82,7 +95,7 @@ struct MacMainView: View {
                 searchTerm: $searchTerm,
                 selectedItem: $selectedFunction,
                 placeholderText: "Quick Search",
-                itemsForSearchTerm: self.quickOpenFilter,
+                itemsForSearchTerm: quickOpenFilter,
                 viewForItem: { textFunction, _ in
                     FilterCellView(textFunction: textFunction)
                 }
@@ -111,11 +124,11 @@ struct MacMainView: View {
             }
         }
     }
-    
+
     private func fireFunctionTrigger() {
-        self.functionTrigger = true
+        functionTrigger = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            self.functionTrigger = false
+            functionTrigger = false
         }
     }
 
@@ -125,15 +138,4 @@ struct MacMainView: View {
         results = results.filter { !selectedFunctions.contains($0) }
         task.complete(with: results)
     }
-    
 }
-
-//#Preview {
-//    MacMainView()
-//        .frame(width: 700, height: 500)
-//}
-//
-//#Preview {
-//    MacMainView(isMultiEditorMode: true)
-//        .frame(width: 700, height: 500)
-//}

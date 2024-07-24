@@ -47,18 +47,18 @@ public extension String {
 
         return words
     }
-    
+
     func lines() -> [String] {
-        guard !self.isEmpty else {return []}
-        return self.components(separatedBy: .newlines)
+        guard !isEmpty else { return [] }
+        return components(separatedBy: .newlines)
     }
 
     func inserting(separator: String, every n: Int) -> String {
         var result = ""
         let characters = Array(self)
-        stride(from: 0, to: characters.count, by: n).forEach {
-            result += String(characters[$0 ..< min($0 + n, characters.count)])
-            if $0 + n < characters.count {
+        for item in stride(from: 0, to: characters.count, by: n) {
+            result += String(characters[item ..< min(item + n, characters.count)])
+            if item + n < characters.count {
                 result += separator
             }
         }

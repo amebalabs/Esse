@@ -4,7 +4,7 @@ enum AppearanceOptions: String, CaseIterable {
     case System
     case Dark
     case Light
-    
+
     func applyAppearance() {
         switch self {
         case .System:
@@ -16,4 +16,3 @@ enum AppearanceOptions: String, CaseIterable {
         }
     }
 }
-

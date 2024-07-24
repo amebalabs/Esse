@@ -11,7 +11,7 @@ struct SidebarView: View {
     var body: some View {
         List(selection: $selectedItem) {
             ForEach(searchTerm.isEmpty ? sidebarItems : Storage.sharedInstance.filteredSidebarItems(searchTerm: searchTerm), id: \.self) { item in
-                DisclosureGroup(item.title, isExpanded:$isExpanded) {
+                DisclosureGroup(item.title, isExpanded: $isExpanded) {
                     ForEach(item.children, id: \.self) { subItem in
                         Text(subItem.title)
                             .tag(subItem)
