@@ -11,6 +11,7 @@
 		FA2748422A352D4D00B6189C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2748412A352D4D00B6189C /* Helpers.swift */; };
 		FA2748462A374CFA00B6189C /* Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2748452A374CFA00B6189C /* Intent.swift */; };
 		FA39AF8F2C5181EE0054D79D /* NeonPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FA39AF8E2C5181EE0054D79D /* NeonPlugin */; };
+		FA39AF912C51B6340054D79D /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AF902C51B6340054D79D /* TextView.swift */; };
 		FA3D77142AC9F36900E56CE8 /* EsseCommandLine in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		FA580F462AAFBB0000FF53EE /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA580F452AAFBB0000FF53EE /* MenuCommands.swift */; };
 		FA73C8632A34AEF6004ABF10 /* EsseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA73C8622A34AEF6004ABF10 /* EsseCore */; };
@@ -74,6 +75,7 @@
 		FA27483F2A352CFC00B6189C /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		FA2748412A352D4D00B6189C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		FA2748452A374CFA00B6189C /* Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intent.swift; sourceTree = "<group>"; };
+		FA39AF902C51B6340054D79D /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		FA580F452AAFBB0000FF53EE /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
 		FA73C85F2A33DBB4004ABF10 /* EsseCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EsseCore; sourceTree = "<group>"; };
 		FA853DCB2A33AD71007D6889 /* Esse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 				FAA09A882ABF2FD700601BDC /* FooterView.swift */,
 				FA27483F2A352CFC00B6189C /* SidebarView.swift */,
 				FAA09A922ABFAC9F00601BDC /* LibraryView.swift */,
+				FA39AF902C51B6340054D79D /* TextView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				FA2748422A352D4D00B6189C /* Helpers.swift in Sources */,
 				FAD08B782B435E1100AE4294 /* EnumPickerVIew.swift in Sources */,
 				FA580F462AAFBB0000FF53EE /* MenuCommands.swift in Sources */,
+				FA39AF912C51B6340054D79D /* TextView.swift in Sources */,
 				FA2748462A374CFA00B6189C /* Intent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

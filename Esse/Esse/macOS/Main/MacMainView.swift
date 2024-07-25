@@ -17,6 +17,7 @@ struct MacMainView: View {
     @State var quickSearchIsVisible = false
 
     @AppStorage("dualPaneModeEnabled") var isMultiEditorMode: Bool = false
+    @AppStorage("showLineNumbers") var showLineNumbers: Bool = true
 
     @State var selectedFunction: TextFunction?
     @State var selectedFunctions: [TextFunction] = []
@@ -26,28 +27,18 @@ struct MacMainView: View {
     var body: some View {
         VStack {
             GeometryReader { geometry in
-                if !isMultiEditorMode {
-                    STTextViewUI.TextView(
-                        text: $document.text,
-                        selection: $selection,
-                        options: [.wrapLines, .highlightSelectedLine],
-                        plugins: [NeonPlugin(theme: .default, language: .python)]
-                    )
-                    .textViewFont(.preferredFont(forTextStyle: .body))
-                } else {
-                    HStack(spacing: 0) {
-                        STTextViewUI.TextView(
-                            text: $document.text,
-                            selection: $selection,
-                            options: [.wrapLines, .highlightSelectedLine],
-                            plugins: [NeonPlugin(theme: .default, language: .python)]
-                        )
-                        .textViewFont(.preferredFont(forTextStyle: .body))
-                        .frame(width: geometry.size.width / 2)
+                HStack(spacing: 0) {
+                    TextView(text: $document.text,
+                             selection: $selection,
+                             showLineNumbers: $showLineNumbers,
+                             options: [.highlightSelectedLine, .wrapLines],
+                             plugins: [NeonPlugin(theme: .default, language: .python)])
+//                        .textViewFont(.preferredFont(forTextStyle: .body))
+                        .frame(width: isMultiEditorMode ? geometry.size.width / 2 : .infinity)
                         .onChange(of: document.text) { _, value in
                             nonEditableText = selectedFunctions.run(value: String(value.characters))
                         }
-
+                    if isMultiEditorMode {
                         TextEditor(text: $nonEditableText)
                             .multilineTextAlignment(.leading)
                             .frame(width: geometry.size.width / 2)
