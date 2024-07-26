@@ -12,7 +12,7 @@
 		FA2748462A374CFA00B6189C /* Intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2748452A374CFA00B6189C /* Intent.swift */; };
 		FA39AF8F2C5181EE0054D79D /* NeonPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FA39AF8E2C5181EE0054D79D /* NeonPlugin */; };
 		FA39AF912C51B6340054D79D /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AF902C51B6340054D79D /* TextView.swift */; };
-		FA3D77142AC9F36900E56CE8 /* EsseCommandLine in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		FA39AF932C53B00F0054D79D /* EsseCommandLine in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA39AF922C53AED40054D79D /* EsseCommandLine */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		FA580F462AAFBB0000FF53EE /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA580F452AAFBB0000FF53EE /* MenuCommands.swift */; };
 		FA73C8632A34AEF6004ABF10 /* EsseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA73C8622A34AEF6004ABF10 /* EsseCore */; };
 		FA853DCF2A33AD71007D6889 /* EsseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA853DCE2A33AD71007D6889 /* EsseApp.swift */; };
@@ -65,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				FA3D77142AC9F36900E56CE8 /* EsseCommandLine in CopyFiles */,
+				FA39AF932C53B00F0054D79D /* EsseCommandLine in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +76,7 @@
 		FA2748412A352D4D00B6189C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		FA2748452A374CFA00B6189C /* Intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intent.swift; sourceTree = "<group>"; };
 		FA39AF902C51B6340054D79D /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		FA39AF922C53AED40054D79D /* EsseCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EsseCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA580F452AAFBB0000FF53EE /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
 		FA73C85F2A33DBB4004ABF10 /* EsseCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EsseCore; sourceTree = "<group>"; };
 		FA853DCB2A33AD71007D6889 /* Esse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Esse.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +91,6 @@
 		FAA09A922ABFAC9F00601BDC /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		FAA09A962AC08CD700601BDC /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		FAB46A432AC0E4ED00DC6369 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EsseCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB46A4B2AC9DF7C00DC6369 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FAB46A502AC9DFD300DC6369 /* EsseCommandLine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EsseCommandLine.entitlements; sourceTree = "<group>"; };
 		FAD08B712B434AF400AE4294 /* EsseDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsseDocument.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				FA853DCB2A33AD71007D6889 /* Esse.app */,
-				FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */,
+				FA39AF922C53AED40054D79D /* EsseCommandLine */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				FAB46A562AC9E15600DC6369 /* EsseCore */,
 			);
 			productName = EsseCommandLine;
-			productReference = FAB46A492AC9DF7C00DC6369 /* EsseCommandLine */;
+			productReference = FA39AF922C53AED40054D79D /* EsseCommandLine */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -308,7 +308,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					FA853DCA2A33AD71007D6889 = {
 						CreatedOnToolsVersion = 15.0;
@@ -458,6 +458,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -522,6 +523,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -553,6 +555,7 @@
 				CODE_SIGN_ENTITLEMENTS = Esse/Esse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 226;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Esse/Preview Content\"";
 				DEVELOPMENT_TEAM = X93LWC49WV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -575,7 +578,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2023.1;
+				MARKETING_VERSION = 2024.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -596,6 +599,7 @@
 				CODE_SIGN_ENTITLEMENTS = Esse/Esse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 226;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Esse/Preview Content\"";
 				DEVELOPMENT_TEAM = X93LWC49WV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -618,7 +622,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2023.1;
+				MARKETING_VERSION = 2024.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -634,10 +638,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = EsseCommandLine/EsseCommandLine.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X93LWC49WV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				OTHER_CODE_SIGN_FLAGS = "\"-i $(PRODUCT_BUNDLE_IDENTIFIER)\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse.cli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -650,10 +658,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = EsseCommandLine/EsseCommandLine.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X93LWC49WV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				OTHER_CODE_SIGN_FLAGS = "\"-i $(PRODUCT_BUNDLE_IDENTIFIER)\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ameba.esse.cli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

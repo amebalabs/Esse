@@ -45,7 +45,9 @@ public class Storage {
         }
     }
 
-    private var externalFunctions: [TextFunction] = []
+    private var externalFunctions: [TextFunction] {
+        sideload.loadFunctions()
+    }
 
     private var actionExtensionFunctionsIDS: [String] = [] {
         didSet {
@@ -172,12 +174,6 @@ public class Storage {
                 "co.ameba.Esse.OtherFunctions.rot13",
             ]
         }
-
-        externalFunctions = sideload.loadFunctions()
-    }
-
-    public func reloadExternalFunctions() {
-        externalFunctions = sideload.loadFunctions()
     }
 }
 

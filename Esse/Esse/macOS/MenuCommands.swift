@@ -1,4 +1,5 @@
 import SwiftUI
+import EsseCore
 
 struct LibraryCommands: Commands {
     @AppStorage("dualPaneModeEnabled") var isMultiEditorMode: Bool = false
@@ -21,9 +22,8 @@ struct LibraryCommands: Commands {
             }).keyboardShortcut("L", modifiers: [.command, .shift])
 
             Button("Open Scripts Folder", action: {
-                let fileManager = FileManager.default
-                if let iCloudURL = fileManager.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") {
-                    NSWorkspace.shared.open(iCloudURL)
+                if let url = EsseCore.Sideload.sharedInstance.containerUrl {
+                    NSWorkspace.shared.open(url)
                 }
             })
 

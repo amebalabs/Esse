@@ -33,7 +33,6 @@ struct MacMainView: View {
                              showLineNumbers: $showLineNumbers,
                              options: [.highlightSelectedLine, .wrapLines],
                              plugins: [NeonPlugin(theme: .default, language: .python)])
-//                        .textViewFont(.preferredFont(forTextStyle: .body))
                         .frame(width: isMultiEditorMode ? geometry.size.width / 2 : .infinity)
                         .onChange(of: document.text) { _, value in
                             nonEditableText = selectedFunctions.run(value: String(value.characters))

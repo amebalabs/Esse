@@ -4,5 +4,11 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>X93LWC49WV.com.ameba.esse</string>
+	</array>
+	<key>com.apple.security.inherit</key>
+	<true/>
 </dict>
 </plist>

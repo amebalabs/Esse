@@ -3,15 +3,26 @@ import Foundation
 public class Sideload {
     public static let sharedInstance = Sideload()
 
-    var containerUrl: URL? {
-        if let str = UserDefaults.standard.string(forKey: "PluginDirectory"),
-           case let url = URL(fileURLWithPath: str)
-        {
-            return url
+    public var containerUrl: URL? {
+        guard let sharedContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "X93LWC49WV.com.ameba.esse") else {
+            print("Failed to get shared container URL")
+            return nil
         }
-        return FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents")
-    }
+        
+        let appSupportDirectory = sharedContainerURL.appendingPathComponent("Library/Application Support/Scripts")
+        
+        if !FileManager.default.fileExists(atPath: appSupportDirectory.path) {
+            do {
+                try FileManager.default.createDirectory(at: appSupportDirectory, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print("Failed to create Application Support directory: \(error.localizedDescription)")
+                return nil
+            }
+        }
 
+        return appSupportDirectory
+    }
+    
     func getDocumentsDirectory() -> URL? {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
@@ -37,11 +48,6 @@ public class Sideload {
                 guard !out.contains(where: { $0.id == function.id }) else { continue } // filter duplicate IDs
                 out.append(function)
             }
-        }
-        if out.isEmpty {
-            let str = "very hidden file"
-            let filename = url.appendingPathComponent(".esse")
-            try? str.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
         }
         return out
     }

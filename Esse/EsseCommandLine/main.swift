@@ -7,7 +7,7 @@ let storage = Storage.sharedInstance
 struct Esse: ParsableCommand {
     static var configuration = CommandConfiguration(
         abstract: "Swiss army knife of text transformation.",
-        version: "Esse version 2020.5",
+        version: "Esse version 2024.1",
         subcommands: [List.self]
     )
 
@@ -57,7 +57,6 @@ extension Esse {
         var transformation: String?
 
         mutating func run() {
-            storage.reloadExternalFunctions()
             var functions = storage.pAllFunctions
             if let transformation {
                 functions = storage.pAllFunctions.filter { $0.id.lowercased().contains(transformation.lowercased()) }
