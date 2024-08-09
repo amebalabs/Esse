@@ -18,6 +18,7 @@ struct MacMainView: View {
 
     @AppStorage("dualPaneModeEnabled") var isMultiEditorMode: Bool = false
     @AppStorage("showLineNumbers") var showLineNumbers: Bool = true
+    @AppStorage("highlightSelectedLine") var highlightSelectedLine: Bool = true
 
     @State var selectedFunction: TextFunction?
     @State var selectedFunctions: [TextFunction] = []
@@ -31,7 +32,7 @@ struct MacMainView: View {
                     TextView(text: $document.text,
                              selection: $selection,
                              showLineNumbers: $showLineNumbers,
-                             options: [.highlightSelectedLine, .wrapLines],
+                             highlightSelectedLine: $highlightSelectedLine,
                              plugins: [])
                         .frame(width: isMultiEditorMode ? geometry.size.width / 2 : .infinity)
                         .onChange(of: document.text) { _, value in

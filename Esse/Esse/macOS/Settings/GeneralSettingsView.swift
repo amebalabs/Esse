@@ -3,10 +3,19 @@ import SwiftUI
 
 struct GeneralSettingsView: View {
     @AppStorage("appearance") private var appearance: AppearanceOptions = .System
+    @AppStorage("showLineNumbers") var showLineNumbers: Bool = true
+    @AppStorage("highlightSelectedLine") var highlightSelectedLine: Bool = true
+    
     var body: some View {
         Form {
-            EnumPickerView(selected: $appearance, title: "Appearance")
             LaunchAtLogin.Toggle()
+            Toggle(isOn: $showLineNumbers, label: {
+                Text("Show Line Numbers")
+            })
+            Toggle(isOn: $highlightSelectedLine, label: {
+                Text("Highlight Selected Line")
+            })
+            EnumPickerView(selected: $appearance, title: "Appearance")
         }
         .onChange(of: appearance) { _, value in
             value.applyAppearance()

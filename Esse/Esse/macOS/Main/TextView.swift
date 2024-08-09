@@ -35,6 +35,7 @@ public struct TextView: SwiftUI.View {
     @Binding private var text: AttributedString
     @Binding private var selection: NSRange?
     @Binding private var showLineNumbers: Bool
+    @Binding private var highlightSelectedLine: Bool
     private let options: Options
     private let plugins: [any STPlugin]
 
@@ -47,13 +48,14 @@ public struct TextView: SwiftUI.View {
         text: Binding<AttributedString>,
         selection: Binding<NSRange?> = .constant(nil),
         showLineNumbers: Binding<Bool> = .constant(false),
-        options: Options = [],
+        highlightSelectedLine: Binding<Bool> = .constant(false),
         plugins: [any STPlugin] = []
     ) {
         _text = text
         _selection = selection
         _showLineNumbers = showLineNumbers
-        self.options = options
+        _highlightSelectedLine = highlightSelectedLine
+        self.options = [.highlightSelectedLine, .wrapLines]
         self.plugins = plugins
     }
 
@@ -62,6 +64,7 @@ public struct TextView: SwiftUI.View {
             text: $text,
             selection: $selection,
             showLineNumbers: $showLineNumbers,
+            highlightSelectedLine: $highlightSelectedLine,
             options: options,
             plugins: plugins
         )
@@ -77,13 +80,15 @@ private struct TextViewRepresentable: NSViewRepresentable {
     @Binding private var text: AttributedString
     @Binding private var selection: NSRange?
     @Binding private var showLineNumbers: Bool
+    @Binding private var highlightSelectedLine: Bool
     private let options: TextView.Options
     private var plugins: [any STPlugin]
 
-    init(text: Binding<AttributedString>, selection: Binding<NSRange?>, showLineNumbers: Binding<Bool>, options: TextView.Options, plugins: [any STPlugin] = []) {
+    init(text: Binding<AttributedString>, selection: Binding<NSRange?>, showLineNumbers: Binding<Bool>, highlightSelectedLine: Binding<Bool>, options: TextView.Options, plugins: [any STPlugin] = []) {
         _text = text
         _selection = selection
         _showLineNumbers = showLineNumbers
+        _highlightSelectedLine = highlightSelectedLine
         self.options = options
         self.plugins = plugins
     }
@@ -106,9 +111,7 @@ private struct TextViewRepresentable: NSViewRepresentable {
 
         scrollView.hasHorizontalScroller = false
 
-        if showLineNumbers {
-            setupLineNumberView(scrollView, textView)
-        }
+        setupLineNumberView(scrollView, textView)
 
         return scrollView
     }
@@ -143,6 +146,8 @@ private struct TextViewRepresentable: NSViewRepresentable {
         if wrapLines != textView.widthTracksTextView {
             textView.widthTracksTextView = options.contains(.wrapLines)
         }
+        textView.highlightSelectedLine = highlightSelectedLine
+        scrollView.rulersVisible = showLineNumbers
 
         if textView.font != font {
             textView.font = font
