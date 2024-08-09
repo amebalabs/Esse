@@ -15,6 +15,7 @@ struct GeneralSettingsView: View {
             Toggle(isOn: $highlightSelectedLine, label: {
                 Text("Highlight Selected Line")
             })
+            Spacer()
             EnumPickerView(selected: $appearance, title: "Appearance")
         }
         .onChange(of: appearance) { _, value in
